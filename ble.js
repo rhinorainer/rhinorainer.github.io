@@ -14,7 +14,7 @@ function setup() {
 
 function connectToBle() {
   // Connect to a device by passing the service UUID
-  //myBLE.connect(serviceUuid, gotCharacteristics);
+  myBLE.connect(serviceUuid, gotCharacteristics);
   
   
 }
