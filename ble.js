@@ -14,7 +14,15 @@ function setup() {
 
 function connectToBle() {
   // Connect to a device by passing the service UUID
-  myBLE.connect(serviceUuid, gotCharacteristics);
+  //myBLE.connect(serviceUuid, gotCharacteristics);
+  
+  navigator.bluetooth.requestDevice({
+    filters: [{
+      services: [0x1234, 0x12345678, serviceUuid]
+    }]
+  })
+  .then(device => { /* ... */ })
+  .catch(error => { console.log(error); });
   
   
 }
